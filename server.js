@@ -1,14 +1,18 @@
-const
-express = require('express'),
-app = express(),
-axios = require('axios'),
-logger = require('morgan'),
-ejsLayouts = require('express-ejs-layouts'),
-PORT = 3000;
+require('dotenv').config();
 
-const apiClient = axios.create();
+const
+    express = require('express'),
+    app = express(),
+    axios = require('axios'),
+    logger = require('morgan'),
+    ejsLayouts = require('express-ejs-layouts'),
+
+
+apiClient = axios.create();
 app.use(logger('dev'));
 
+
+//ejs config
 app.set('view engine', 'ejs');
 app.use(ejsLayouts);
 
@@ -29,6 +33,6 @@ app.get('/tender', (req, res) => {
 })
 
 
-app.listen(PORT, err => {
-    console.log(err || `Server is listening on port ${PORT}`);
+app.listen(process.env.PORT, err => {
+    console.log(err || `Server is listening on port ${process.env.PORT}`);
 })
