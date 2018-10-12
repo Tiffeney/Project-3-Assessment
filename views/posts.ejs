@@ -1,0 +1,15 @@
+<a href="/">HOME</a> |
+
+<a href="/posts">ALL POST</a>
+
+<h2>ALL POSTS</h2>
+
+
+<table>
+    <% for(var i=0; i < posts.length; i++) { %>
+       <tr>
+         <td><%= posts[i].title %></td>
+         <td><%= posts[i].body %></td>
+       </tr>
+    <% } %>
+</table>
