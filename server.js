@@ -5,14 +5,16 @@ const
     app = express(),
     axios = require('axios'),
     logger = require('morgan'),
-    ejsLayouts = require('express-ejs-layouts'),
+    ejsLayouts = require('express-ejs-layouts')
+    
 
 
-apiClient = axios.create();
+    apiClient = axios.create();
 app.use(logger('dev'));
 
 
-//ejs config
+
+// ejs config
 app.set('view engine', 'ejs');
 app.use(ejsLayouts);
 
